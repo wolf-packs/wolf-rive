@@ -1,10 +1,11 @@
 > topic greet
 + hi
-- hello! what would you like to do?
+- hello! what would you like to do? // this is a comment that will not be in the test
 
 > topic add_pizza
 + i want a large pizza
 - what toppings would you like on it?
+
 + extra cheese
 - a large extra cheese pizza coming right up!
 
@@ -15,6 +16,6 @@
 + extra cheese
 - a large extra cheese pizza coming right up!
 
-+ what did i order
++ what did i order?
 - this is what you ordered
-- a large extra cheese pizza
+^ a large extra cheese pizza

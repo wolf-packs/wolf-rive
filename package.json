@@ -3,13 +3,19 @@
   "version": "1.0.0",
   "description": "Rivescript Testing for Wolf Bots",
   "main": "src/index.js",
+  "types": "index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "botbuilder-wolf": "^2.3.1",
+    "botbuilder-wolf": "^2.3.2",
+    "lodash.startcase": "^4.4.0",
+    "redux": "^4.0.0",
     "rivescript": "^2.0.0-alpha.6"
+  },
+  "peerDependencies": {
+    "jest": "^23.5.0"
   }
 }
