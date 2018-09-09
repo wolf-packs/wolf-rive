@@ -2,7 +2,7 @@
 
 As you build out your abilities with [Botbuilder Wolf](https://github.com/great-lakes/botbuilder-wolf), you'd want to test out your bot in an easy way.
 
-** Now you can! **
+**Now you can!**
 
 With Wolf Rive, you can write readable test using [Rivescript](https://www.rivescript.com/) in one or multiple `.rive` files.
 
