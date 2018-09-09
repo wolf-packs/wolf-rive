@@ -4,7 +4,7 @@ As you build out your abilities with [Botbuilder Wolf](https://github.com/great-
 
 ** Now you can! **
 
-With Wolf Rive, you can write readable test in one or multiple `.rive` files.
+With Wolf Rive, you can write readable test using [Rivescript](https://www.rivescript.com/) in one or multiple `.rive` files.
 
 ## How to use
 
@@ -17,9 +17,9 @@ npm install --save-dev botbuilder-wolf-rive jest
 
 **2. Build your Rivescript Test File:**
 > Note: Rivescript syntax is very easy to write  
-`> topic` is the start of a test flow (Rivescript terminology: "topic").  
+`> topic` is the start of a test conversation flow (Rivescript terminology: "topic").  
 `+` is the start of a user utterance (Rivescript term: "trigger").  
-`-` is the start of a bot response  
+`-` is the start of a bot response.  Bot can have multiple responses. 
 `^` is the start of a new line for the bot response
 
 If you're using vscode, you can install the rivescript extension for language support.
@@ -75,14 +75,14 @@ Both the nlp and ability functions can be async functions, however it will drama
 ## FAQ:
 * **Why did you make this library?**
 
-Testing is important, but testing a bot is not fun.  There seem to be a gap between unit testing very method of a bot and a full E2E test suite that requires the botbuilder.
+Testing is important, but testing a bot is not fun.  There seem to be a gap between unit testing every method of a bot and a full E2E test suite that requires the botbuilder.
 
-This library aims to fill that gap for you.  It does not touch the bot `context`, and only test the wolf ability logic.
+This library aims to fill that gap for you.  It does not touch the bot `context`, and only test the wolf ability logic which takes in the user utterance and spit out the `messageStringArray` property from wolf's outtake result.
 
 * **Why did you use Rivescript?**
 
-It has an easy syntax that anyone can write.
+It has an easy-to-learn syntax that anyone can write.  I recognize that we are repurposing Rivescript a bit to use as a testing tool, but isn't "repurposing to make live better" what engineering is all about? :wink:
 
 * **Hey wolf-rive does not support feature X of Rivescript**
 
-This library is not meant to replace wolf or botbuilder for that matter.  It is a way for a developer using Wolf to easily test the bot.
+This library is simply for testing.  It is not meant to replace wolf, or botbuilder for that matter.  Therefore, it currently does not support things like variables or topic inheritance.
