@@ -77,12 +77,19 @@ Both the nlp and ability functions can be async functions, however it will drama
 
 Testing is important, but testing a bot is not fun.  There seem to be a gap between unit testing every method of a bot and a full E2E test suite that requires the botbuilder.
 
-This library aims to fill that gap for you.  It does not touch the bot `context`, and only test the wolf ability logic which takes in the user utterance and spit out the `messageStringArray` property from wolf's outtake result.
+This library aims to fill that gap for you.  It does not touch the bot `context`, and only test the wolf ability logic which takes in the user utterance and tests the `messageStringArray` property from wolf's outtake result.
+
+* **How does the tests work?**
+Each "topic" is a test conversation flow.  The topic name should be [snake cased](https://en.wikipedia.org/wiki/Snake_case.
+
+The topic name should also be descriptive to what the flow is about, because this name is shown on the test report.
+
+Each topic is run on a fresh `conversationState`, meaning one test conversation flow will not interfere or influence another flow.
 
 * **Why did you use Rivescript?**
 
-It has an easy-to-learn syntax that anyone can write.  I recognize that we are repurposing Rivescript a bit to use as a testing tool, but isn't "repurposing to make live better" what engineering is all about? :wink:
+It has an easy-to-learn syntax that anyone can write.  I recognize that we are repurposing Rivescript a bit to use it as a testing tool, but isn't "repurposing to make lives better" what engineering is all about? :wink:
 
 * **Hey wolf-rive does not support feature X of Rivescript**
 
-This library is simply for testing.  It is not meant to replace wolf, or botbuilder for that matter.  Therefore, it currently does not support things like variables or topic inheritance.
+This library is simply for testing.  It is not meant to replace wolf, or botbuilder for that matter.  Therefore, it currently does not support things like Rivescript's variables or topic inheritance.
