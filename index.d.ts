@@ -5,18 +5,24 @@ interface RiveAstObject {
   [key: string]: any
 }
 
-const WolfRunner = async (
+type WolfRunner = (
   convoState: Object,
   store: Store,
   message: string
-) => OuttakeResult
+) => Promise<OuttakeResult>
 
-export const parseRive = (filePath: string) => RiveAstObject
+type ParseRive = (filePath: string) => RiveAstObject
 
-export const createWolfRunner = (
+type CreateWolfRunner = (
   getMessageData: (message: string) => NlpResult,
   getAbilities: () => Ability[],
   defaultAbility: string
 ) => WolfRunner
 
-export const runWolfTests = (riveObj: RiveAstObject, wolfRunner: WolfRunner) => undefined
+type RunWolfTests = (riveObj: RiveAstObject, wolfRunner: WolfRunner) => void
+
+export const parseRive: ParseRive
+
+export const createWolfRunner: CreateWolfRunner
+
+export const runWolfTests: RunWolfTests

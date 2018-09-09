@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "types": "index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "author": "",
   "license": "MIT",
@@ -16,6 +16,9 @@
     "rivescript": "^2.0.0-alpha.6"
   },
   "peerDependencies": {
+    "jest": "^23.5.0"
+  },
+  "devDependencies": {
     "jest": "^23.5.0"
   }
 }

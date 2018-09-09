@@ -21,7 +21,7 @@ const runWolfTests = (riveObj, wolfRunner) => {
   const topicNames = rawTopicNames.map(startCase)
 
   // Need to use for because jest doesn't like dynamically created `test` :(
-  for (let i = 0; i < rawTopicNames.length; i++) { 
+  for (let i = 0; i < rawTopicNames.length; i++) {
     const rawName = rawTopicNames[i]
     const testName = topicNames[i]
     test(testName, async () => {
@@ -29,13 +29,14 @@ const runWolfTests = (riveObj, wolfRunner) => {
       const convoState = {}
       const store = storeCreator(null)
       const triggers = topics[rawName]
+      expect.assertions(triggers.length)
       // Need to use for because jest doesn't like dynamically created `expect` :(
       for (let j = 0; j < triggers.length; j++) {
         const trigger = triggers[j]
         const { trigger: userMessage, reply } = trigger
         const {messageStringArray: actual} = await wolfRunner(convoState, store, userMessage)
         const expected = reply.map(_ => _.replace(/\\s/g, ' '))
-        await expect(actual).toEqual(expected)
+        expect(actual).toEqual(expected)
       }
     })
   }
