@@ -80,7 +80,7 @@ Testing is important, but testing a bot is not fun.  There seem to be a gap betw
 This library aims to fill that gap for you.  It does not touch the bot `context`, and only test the wolf ability logic which takes in the user utterance and tests the `messageStringArray` property from wolf's outtake result.
 
 * **How does the tests work?**
-Each "topic" is a test conversation flow.  The topic name should be [snake cased](https://en.wikipedia.org/wiki/Snake_case.
+Each "topic" is a test conversation flow.  The topic name should be [snake cased](https://en.wikipedia.org/wiki/Snake_case).
 
 The topic name should also be descriptive to what the flow is about, because this name is shown on the test report.
 
