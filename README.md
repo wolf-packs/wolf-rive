@@ -19,7 +19,7 @@ npm install --save-dev botbuilder-wolf-rive jest
 > Note: Rivescript syntax is very easy to write  
 `> topic` is the start of a test conversation flow (Rivescript terminology: "topic").  
 `+` is the start of a user utterance (Rivescript term: "trigger").  
-`-` is the start of a bot response.  Bot can have multiple responses. 
+`-` is the start of a bot response.  Bot can have multiple responses.  
 `^` is the start of a new line for the bot response
 
 If you're using vscode, you can install the rivescript extension for language support.
