@@ -1,6 +1,6 @@
 > topic greet
-+ hi
-- hello! what would you like to do? // this is a comment that will not be in the test
++ hi, my name is Hao
+- Hello Hao! // this is a comment that will not be in the test
 
 > topic add_pizza
 + i want a large pizza

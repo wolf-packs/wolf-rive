@@ -24,23 +24,29 @@ npm install --save-dev botbuilder-wolf-rive jest
 
 If you're using vscode, you can install the rivescript extension for language support.
 
-Here is an example of two test flows:
+Here is an example of three test flows:
 ```
-> topic greeting
-+ hi bot
-- hello
+> topic greet
++ hi, my name is Hao
+- Hello Hao! // this is a comment that will not be in the test
 
-> topic onboard
-+ I need a flight
-- where would you like to go?
+> topic add_pizza
++ i want a large pizza
+- what toppings would you like on it?
 
-+ Seattle, please
-- ok! when would you like to leave?
++ extra cheese
+- a large extra cheese pizza coming right up!
 
-+ tomorrow
-- ok! Here are some flights:
-^ * AA-2305 leaving 7am
-^ * UA-103 leaving 9am
+> topic add_pizza_then_show_order
++ i want a large pizza
+- what toppings would you like on it?
+
++ extra cheese
+- a large extra cheese pizza coming right up!
+
++ what did i order?
+- this is what you ordered
+^ a large extra cheese pizza
 ```
 
 **3. Create your Test**
@@ -65,12 +71,28 @@ const demo = parseRive('./src/tests/demo.rive') // <=== Notice CWD is from the p
 // const sprint1 = parseRive('./src/tests/sprint1.rive')
 // const sprint2 ...
 
-describe('Testing Using Rivescripts!', () => {
+describe('Demo Stage', () => {
   runWolfTests(demo, wolfRunner)
 })
 ```
 
 Both the nlp and ability functions can be async functions, however it will dramatically increase test duration if NLP is async.
+
+Save this file in `src/tests/bot.test.js` (or `.ts`)
+
+**4. Run your Test**
+Replace the value of `scripts -> test` in your `package.json` like so:
+```json
+{
+  /* ... */
+  "scripts": {
+    "test": "jest src/tests/bot.test"
+  }
+}
+```
+
+And run `npm test` will give you this:
+![test output for pizza test](./static/pizza-test.jpg)
 
 ## FAQ:
 * **Why did you make this library?**
