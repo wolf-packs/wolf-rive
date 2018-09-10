@@ -4,7 +4,7 @@ As you build out your abilities with [Botbuilder Wolf](https://github.com/great-
 
 **Now you can!**
 
-With Wolf Rive, you can write readable test using [Rivescript](https://www.rivescript.com/) in one or multiple `.rive` files.
+With Wolf Rive, you can write readable tests using [Rivescript](https://www.rivescript.com/) in one or multiple `.rive` files.
 
 ## How to use
 
